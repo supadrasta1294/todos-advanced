@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ReactiveFormsModule,FormBuilder, FormGroup, FormControl, Validators} from '@angular/forms'
 
 @Component({
   selector: 'app-sign-in',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignInComponent implements OnInit {
 
-  constructor() { }
+  public frm:FormGroup;
 
-  ngOnInit() {
+  constructor(private fb:FormBuilder) 
+  {
+
+    this.frm= fb.group({
+      username:['',Validators.required],
+      password:['',Validators.required]
+    })
   }
 
+public doSigIn(){
+const username= this.frm.get('username');
+const password= this.frm.get('password');
 }
+ 
+  ngOnInit() {
+   
+     
+    }
+  }
