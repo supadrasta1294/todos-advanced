@@ -21,6 +21,10 @@
     >
       Please enter password
     </div>
+
+    <div class="input-errors" *ngIf="hasFailed">
+     Please enter valid credentials
+    </div>
     <button type="submit" (click)="doSigIn()" [disabled]="!frm.valid">SignIn</button>
   </form>
 </div>
