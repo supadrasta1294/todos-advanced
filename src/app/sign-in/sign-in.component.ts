@@ -32,6 +32,7 @@ const password= this.frm.get('password').value;
 this.api.signIn(username,password).subscribe(
   (result: any) => {
     console.log("Result is ",result);
+    debugger;
     this.session.accessToken=result.token;
        this.session.name=result.name;
        this.hasFailed=false;
